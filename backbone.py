@@ -150,7 +150,7 @@ class ResNet(nn.Module):
         )
         self.in_channels = planes * ResBlock.expansion
 
-        for i in range(blocks - 1):
+        for _ in range(blocks - 1):
             layers.append(ResBlock(self.in_channels, planes))
 
         return nn.Sequential(*layers)
